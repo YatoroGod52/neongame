@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Неоновый рой</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+    <h1 class="logo">НЕОНОВЫЙ <span>РОЙ</span></h1>
+
+    <div class="game-layout">
+        <!-- Левая панель статов -->
+        <div id="stats-panel">
+            <!-- Сюда JS вставит статы -->
+        </div>
+
+        <!-- Правая колонка (HUD + Игра) -->
+        <div class="right-col">
+            <!-- Верхняя панель -->
+            <div class="hud">
+                <span>❤ <b id="hp">5</b></span>
+                <span>Очки <b id="score">0</b></span>
+                <span>Волна <b id="wave">1</b></span>
+                <span>Уровень <b id="level">1</b></span>
+            </div>
+            
+            <!-- Полоска опыта -->
+            <div class="xpbar">
+                <div id="xp"></div>
+            </div>
+
+            <!-- Сама игра (холст) -->
+            <div class="stage">
+                <canvas id="game" width="960" height="600"></canvas>
+
+                <!-- Экран выбора героя -->
+                <div class="over" id="pick" hidden>
+                    <div class="title" style="color: #00f0ff">ВЫБЕРИ ГЕРОЯ</div>
+                    <div id="heroes" class="cards"></div>
+                </div>
+
+                <!-- Экран улучшений -->
+                <div class="over" id="levelup" hidden>
+                    <div class="title gold">НОВЫЙ УРОВЕНЬ!</div>
+                    <div id="cards" class="cards"></div>
+                </div>
+
+                <!-- Экран проигрыша -->
+                <div class="over" id="over" hidden>
+                    <h2>GAME OVER</h2>
+                    <p>Очки: <b id="final">0</b></p>
+                    <button id="restart">Выбрать героя</button>
+                    <p class="hint">R — заново тем же героем</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="help">WASD или стрелки — ходить · мышью — целиться · зажать кнопку мыши — стрелять</p>
+</div>
+
+<!-- Подключаем игру -->
+<script src="game.js"></script>
+</body>
+</html>
